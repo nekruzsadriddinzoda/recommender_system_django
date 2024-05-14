@@ -1,0 +1,386 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Курсҳо | Омўзиши мошинӣ</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'recommend/assets/img/favicon.ico'%}">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{% static 'recommend/assets/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'recommend/assets/css/owl.carousel.min.css'%}">
+    <link rel="stylesheet" href="{% static 'recommend/assets/css/slicknav.css'%}">
+    <link rel="stylesheet" href="{% static 'recommend/assets/css/flaticon.css'%}">
+    <link rel="stylesheet" href="{% static 'recommend/assets/css/progressbar_barfiller.css'%}">
+    <link rel="stylesheet" href="{% static 'recommend/assets/css/gijgo.css'%}">
+    <link rel="stylesheet" href="{% static 'recommend/assets/css/animate.min.css'%}">
+    <link rel="stylesheet" href="{% static 'recommend/assets/css/animated-headline.css'%}">
+    <link rel="stylesheet" href="{% static 'recommend/assets/css/magnific-popup.css'%}">
+    <link rel="stylesheet" href="{% static 'recommend/assets/css/fontawesome-all.min.css'%}">
+    <link rel="stylesheet" href="{% static 'recommend/assets/css/themify-icons.css'%}">
+    <link rel="stylesheet" href="{% static 'recommend/assets/css/slick.css'%}">
+    <link rel="stylesheet" href="{% static 'recommend/assets/css/nice-select.css'%}">
+    <link rel="stylesheet" href="{% static 'recommend/assets/css/style.css'%}">
+    <style>
+        .button4 {
+    padding: 20px 80px;
+    background: rgb(217,97,230);
+    background: linear-gradient(90deg, rgba(217,97,230,1) 0%, rgba(52,86,198,1) 100%);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 600;
+    border-radius: 10px;
+    position: relative; 
+    overflow-x: hidden; 
+}
+
+.button4 .flare4 {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 45px;
+    transform: skewX(-45deg);
+    animation: flareAnimation;
+    left: -150%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.4));
+    animation: flareAnimation 3s infinite linear;
+}
+
+@keyframes flareAnimation {
+    0% {
+        left: -150%;
+    }
+    100% {
+        left: 150%;
+    }
+}
+    </style>
+</head>
+
+<body>
+    <!-- ? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="{% static 'recommend/assets/img/logo/loder.png'%}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+    <header>
+        <!-- Header Start -->
+        <div class="header-area header-transparent">
+            <div class="main-header ">
+                <div class="header-bottom  header-sticky">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <!-- Logo -->
+                            <div class="col-xl-2 col-lg-2">
+                                <div class="logo">
+                                    <a href="index.html"><img src="{% static 'recommend/assets/img/logo/logo.png'%}" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-xl-10 col-lg-10">
+                                <div class="menu-wrapper d-flex align-items-center justify-content-end">
+                                    <!-- Main-menu -->
+                                    <div class="main-menu d-none d-lg-block">
+                                        <nav>
+                                            <ul id="navigation">                                                                                          
+                                                <li class="active" ><a href="/">Асосӣ</a></li>
+                                                <li><a href="courses.html">Курсҳо</a></li>
+                                                <li><a href="about.html">Дар бораи лоиҳа</a></li>
+                                                <li><a href="#">Тамос</a>
+                                                    <ul class="submenu">
+                                                        <li><a href="blog.html">Blog</a></li>
+                                                        <li><a href="blog_details.html">Blog Details</a></li>
+                                                        <li><a href="elements.html">Element</a></li>
+                                                    </ul>
+                                                </li>
+                                                {% if not request.user.is_authenticated %}
+                                                {% else %}
+                                                    <!--<center style="color:#fff"><h2>Хуш омадед {{user.username}}!!</h2></center>-->
+                                                    <li><a href="contact.html">{{user.username}}</a></li>
+                                                {% endif %}
+                                                <!-- Button -->
+                                                {% if not request.user.is_authenticated %}
+                                                    <li class="button-header margin-left "><a href="{% url 'signup' %}" class="btn">Бақайдгирӣ</a></li>
+                                                    <li class="button-header"><a href="{% url 'login' %}" class="btn btn3">Воридшавӣ</a></li>
+                                                {% else %}
+                                                    <li class="button-header"><a href="{% url 'logout' %}" class="btn btn3">Баромадан</a></li>
+                                                {% endif %}
+
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div> 
+                            <!-- Mobile Menu -->
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+    </header>
+    <main>
+        <!--? slider Area Start-->
+        <section class="slider-area ">
+            <div class="slider-active">
+                <!-- Single Slider -->
+                <div class="single-slider slider-height d-flex align-items-center">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-7 col-md-12">
+                                <div class="hero__caption">
+                                    <h1 data-animation="fadeInLeft" data-delay="0.2s">Платформаи омӯзиши<br> курсҳо</h1>
+                                    <p data-animation="fadeInLeft" data-delay="0.4s">Платформаи тавсиядиҳандаи курсҳо дар асоси омӯзиши мошинӣ</p>
+                                </div>
+                                <div class="col-12">
+                                    <!--<div style="display: flex;">
+                                        <input class="form-control" name="subject" id="subject" type="text" style="padding: 30px 29px; border-radius: 5px; margin-right: 10px;" placeholder="Ҷустуҷӯи курс">
+                                        <a href="#" class="btn hero-btn" data-animation="fadeInLeft" data-delay="0.7s">Ҷустуҷӯ</a>
+                                    </div>-->
+                                    <form class="form-horizontal" role="search" method="get" action=''>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control input-lg " name="q" value="{{ request.GET.q }}" style="padding: 30px 29px; border-radius: 5px; margin-right: 10px; font-size: large;" placeholder= "Ҷустуҷӯи курсҳо" required />
+                                                <span class='input-group-btn'>
+                                                    <button class='button1 btn hero-btn' style="padding: 30px 29px; height: 62px;" type='submit'>Ҷустуҷӯ</button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>          
+                </div>
+            </div>
+        </section>
+        <!-- ? services-area -->
+        <div class="services-area">
+            <div class="container">
+                <div class="row justify-content-sm-center">
+                    <div class="col-lg-4 col-md-6 col-sm-8">
+                        <div class="single-services mb-30">
+                            <div class="features-icon">
+                                <img src="{% static 'recommend/assets/img/icon/icon1.svg'%}" alt="">
+                            </div>
+                            <div class="features-caption">
+                                <h3>60+ курсҳо</h3>
+                                <p>Платформа барои корбарони сатҳҳои гуногуни маҳорат зиёда аз 60 курсҳои барномасозӣ пешниҳод мекунад.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-8">
+                        <div class="single-services mb-30">
+                            <div class="features-icon">
+                                <img src="{% static 'recommend/assets/img/icon/icon2.svg'%}" alt="">
+                            </div>
+                            <div class="features-caption">
+                                <h3>Филтри муштарак</h3>
+                                <p>Филтркунии муштарак маълумотро бо истифода аз маълумоте, ки система аз корбарони дигар ҷамъоварӣ кардааст, филтр мекунад.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-8">
+                        <div class="single-services mb-30">
+                            <div class="features-icon">
+                                <img src="{% static 'recommend/assets/img/icon/icon3.svg'%}" alt="">
+                            </div>
+                            <div class="features-caption">
+                                <h3>Алгоритми тавсиявӣ</h3>
+                                <p>Алгоритмҳои тавсиявӣ технологияе мебошанд, ки ба корбар дар асоси маълумоти ӯ курсҳо пешниҳод мекунанд.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--? Team -->
+        {% if not request.user.is_authenticated %}
+        <!--<p align="center">Рекомендации отсутствуют или пользователь не авторизован.</p>-->
+        {% else %}
+                <div class="row justify-content-center">
+                    <div class="col-xl-12">
+                        <div class="section-tittle text-center mt-20">
+                            {% url 'watch' as my_view2 %}
+                            {% if not request.path == my_view2 %}
+                            <a href="{% url 'recommend' %}" class="button4" style="font-size: 32px;"> Тавсияҳо барои шумо 
+                                {% url 'recommend' as my_view %}
+                                {% if not request.path == my_view %}
+                                &#128073; 
+                                {% endif %}
+                                <span class="flare4"></span></a>
+                            {% endif %}
+                            {% if not request.path == my_view2 %}
+                            <a href="{% url 'watch' %}" class="button4" style="font-size: 32px; margin-left: 10px;">
+                                Рӯйхати ман &raquo;
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <!-- Course list -->
+                <br>
+                <br>
+                <div class="services-area" style="margin-top: 10px;">
+                <div class="row">
+                    {% if movie_list %}
+                        {% for movie in movie_list %}
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+                                <div class="single-services mb-30">
+                                    <div class="features-icon">
+                                        <img src="{{ movie.movie_logo.url }}" width="100px" height="100px" alt="">
+                                    </div>
+                                    <div class="features-caption">
+                                        <h3>{{ movie.title }}</h3>
+                                        <h5>{{ movie.genre }}</h5>
+                                        <a href="{% url 'detail' movie.id %}" style="color: darkblue;">Маълумоти бештар </a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            
+        </div>
+        {% endif %}
+        <hr>
+        <!-- Slider Start -->
+
+        <!-- Slider End -->
+        <!-- Services End -->
+        <!-- Courses area start -->
+        <div class="courses-area section-padding40 fix">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-7 col-lg-8">
+                        <div class="section-tittle text-center mb-55">
+                            {% url 'recommend' as my_view %}
+                            {% url 'watch' as my_view2 %}
+                            {% if not request.path == my_view %}
+                            {% if not request.path == my_view2 %}
+                            <h2>Рӯйхати курсҳо</h2>
+                            {% else %}
+                            <h2>Рӯйхати ман</h2>
+                            {% endif %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <!-- Course list -->
+    
+            <div class="services-area" style="margin-top: 10px;">
+                <div class="row">
+                    {% if movies %}
+                        {% for movie in movies %}
+                            <div class="col-lg-4 col-md-4 col-sm-4">
+                                <div class="single-services mb-30">
+                                    <div class="features-icon">
+                                        <img src="{{ movie.movie_logo.url }}" width="100px" height="100px" alt="">
+                                    </div>
+                                    <div class="features-caption">
+                                        <h3>{{ movie.title }}</h3>
+                                        <h5>{{ movie.genre }}</h5>
+                                        <a href="{% url 'detail' movie.id %}" style="color: darkblue;">Маълумоти бештар </a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            {% else %}
+                            <div class="alert alert-danger">
+                                <strong>Бубахшед!</strong> Дар рӯйхати шумо курсҳо вуҷуд надоранд.
+                            </div>
+                        {% endif %}
+                </div>
+            </div>
+
+            </div>
+         </div>
+        </div>
+        <!-- Courses area End -->
+    </main>
+    <footer>
+     <div class="footer-wrappper footer-bg">
+        <!-- Footer Start-->
+        
+        <!-- footer-bottom area -->
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="footer-border">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-xl-12 ">
+                            <div class="footer-copy-right text-center">
+                                <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                  Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ҳамаи ҳуқуқҳо маҳфуз аст | Ин лоиҳа аз ҷониби <a href="https://nekruzsadriddinzoda.vercel.app/" target="_blank">Nekruz Sadriddinzoda</a> таҳия шудааст <i class="fa fa-heart" aria-hidden="true"></i>
+                                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Footer End-->
+      </div>
+  </footer> 
+  <!-- Scroll Up -->
+  <div id="back-top" >
+    <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+</div>
+
+<!-- JS here -->
+<script src="{% static 'recommend/./assets/js/vendor/modernizr-3.5.0.min.js'%}"></script>
+<!-- Jquery, Popper, Bootstrap -->
+<script src="{% static 'recommend/./assets/js/vendor/jquery-1.12.4.min.js'%}"></script>
+<script src="{% static 'recommend/./assets/js/popper.min.js'%}"></script>
+<script src="{% static 'recommend/./assets/js/bootstrap.min.js'%}"></script>
+<!-- Jquery Mobile Menu -->
+<script src="{% static 'recommend/./assets/js/jquery.slicknav.min.js'%}"></script>
+
+<!-- Jquery Slick , Owl-Carousel Plugins -->
+<script src="{% static 'recommend/./assets/js/owl.carousel.min.js'%}"></script>
+<script src="{% static 'recommend/./assets/js/slick.min.js'%}"></script>
+<!-- One Page, Animated-HeadLin -->
+<script src="{% static 'recommend/./assets/js/wow.min.js'%}"></script>
+<script src="{% static 'recommend/./assets/js/animated.headline.js'%}"></script>
+<script src="{% static 'recommend/./assets/js/jquery.magnific-popup.js'%}"></script>
+
+<!-- Date Picker -->
+<script src="{% static 'recommend/./assets/js/gijgo.min.js'%}"></script>
+<!-- Nice-select, sticky -->
+<script src="{% static 'recommend/./assets/js/jquery.nice-select.min.js'%}"></script>
+<script src="{% static 'recommend/./assets/js/jquery.sticky.js'%}"></script>
+<!-- Progress -->
+<script src="{% static 'recommend/./assets/js/jquery.barfiller.js'%}"></script>
+
+<!-- counter , waypoint,Hover Direction -->
+<script src="{% static 'recommend/./assets/js/jquery.counterup.min.js'%}"></script>
+<script src="{% static 'recommend/./assets/js/waypoints.min.js'%}"></script>
+<script src="{% static 'recommend/./assets/js/jquery.countdown.min.js'%}"></script>
+<script src="{% static 'recommend/./assets/js/hover-direction-snake.min.js'%}"></script>
+
+<!-- contact js -->
+<script src="{% static 'recommend/./assets/js/contact.js'%}"></script>
+<script src="{% static 'recommend/./assets/js/jquery.form.js'%}"></script>
+<script src="{% static 'recommend/./assets/js/jquery.validate.min.js'%}"></script>
+<script src="{% static 'recommend/./assets/js/mail-script.js'%}"></script>
+<script src="{% static 'recommend/./assets/js/jquery.ajaxchimp.min.js'%}"></script>
+
+<!-- Jquery Plugins, main Jquery -->	
+<script src="{% static 'recommend/./assets/js/plugins.js'%}"></script>
+<script src="{% static 'recommend/./assets/js/main.js'%}"></script>
+
+</body>
+</html>

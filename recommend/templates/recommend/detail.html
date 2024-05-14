@@ -1,0 +1,384 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <title>Courses | Education</title>
+   <meta name="description" content="">
+   {% load static %}
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="shortcut icon" type="image/x-icon" href="{% static 'recommend/assets/img/favicon.ico'%}">
+
+   <!-- CSS here -->
+   <link rel="stylesheet" href="{% static 'recommend/assets/css/bootstrap.min.css'%}">
+   <link rel="stylesheet" href="{% static 'recommend/assets/css/owl.carousel.min.css'%}">
+   <link rel="stylesheet" href="{% static 'recommend/assets/css/slicknav.css'%}">
+   <link rel="stylesheet" href="{% static 'recommend/assets/css/animate.min.css'%}">
+   <link rel="stylesheet" href="{% static 'recommend/assets/css/hamburgers.min.css'%}">
+   <link rel="stylesheet" href="{% static 'recommend/assets/css/magnific-popup.css'%}">
+   <link rel="stylesheet" href="{% static 'recommend/assets/css/fontawesome-all.min.css'%}">
+   <link rel="stylesheet" href="{% static 'recommend/assets/css/themify-icons.css'%}">
+   <link rel="stylesheet" href="{% static 'recommend/assets/css/slick.css'%}">
+   <link rel="stylesheet" href="{% static 'recommend/assets/css/nice-select.css'%}">
+   <link rel="stylesheet" href="{% static 'recommend/assets/css/style.css'%}">
+   <link rel="stylesheet" type="text/css" href="{% static 'recommend/css/bootstrap.min.css'%}">
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css' >
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' href='{% static "recommend/css/base.css" %}' />
+</head>
+
+<body>
+   <!--? Preloader Start -->
+   <div id="preloader-active">
+      <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="preloader-inner position-relative">
+          <div class="preloader-circle"></div>
+          <div class="preloader-img pere-text">
+            <img src="{% static 'recommend/assets/img/logo/loder.png'%}" alt="">
+         </div>
+      </div>
+   </div>
+</div>
+<!-- Preloader Start -->
+<!-- Header Start -->
+<div class="header-area header-transparent">
+   <div class="main-header ">
+       <div class="header-bottom  header-sticky">
+           <div class="container-fluid">
+               <div class="row align-items-center">
+                   <!-- Logo -->
+                   <div class="col-xl-2 col-lg-2">
+                       <div class="logo">
+                           <a href="index.html"><img src="{% static 'recommend/assets/img/logo/logo.png'%}" alt=""></a>
+                       </div>
+                   </div>
+                   <div class="col-xl-10 col-lg-10">
+                       <div class="menu-wrapper d-flex align-items-center justify-content-end">
+                           <!-- Main-menu -->
+                           <div class="main-menu d-none d-lg-block">
+                               <nav>
+                                   <ul id="navigation">                                                                                          
+                                       <li class="active" ><a href="/">Асосӣ</a></li>
+                                       <li><a href="courses.html">Курсҳо</a></li>
+                                       <li><a href="about.html">Дар бораи лоиҳа</a></li>
+                                       <li><a href="#">Тамос</a>
+                                           <ul class="submenu">
+                                               <li><a href="blog.html">Blog</a></li>
+                                               <li><a href="blog_details.html">Blog Details</a></li>
+                                               <li><a href="elements.html">Element</a></li>
+                                           </ul>
+                                       </li>
+                                       {% if not request.user.is_authenticated %}
+                                       {% else %}
+                                           <!--<center style="color:#fff"><h2>Хуш омадед {{user.username}}!!</h2></center>-->
+                                           <li><a href="contact.html">{{user.username}}</a></li>
+                                       {% endif %}
+                                       <!-- Button -->
+                                       {% if not request.user.is_authenticated %}
+                                           <li class="button-header margin-left "><a href="{% url 'signup' %}" class="btn">Бақайдгирӣ</a></li>
+                                           <li class="button-header"><a href="{% url 'login' %}" class="btn btn3">Воридшавӣ</a></li>
+                                       {% else %}
+                                           <li class="button-header"><a href="{% url 'logout' %}" class="btn btn3">Баромадан</a></li>
+                                       {% endif %}
+
+                                   </ul>
+                               </nav>
+                           </div>
+                       </div>
+                   </div> 
+                   <!-- Mobile Menu -->
+                   <div class="col-12">
+                       <div class="mobile_menu d-block d-lg-none"></div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+</div>
+<!-- Header End -->
+<main>
+   <!--? slider Area Start-->
+   <section class="slider-area slider-area2">
+     <div class="slider-active">
+       <!-- Single Slider -->
+       <div class="single-slider slider-height2">
+         <div class="container">
+           <div class="row">
+             <div class="col-xl-8 col-lg-11 col-md-12">
+               <div class="hero__caption hero__caption2">
+                 <h1 data-animation="bounceIn" data-delay="0.2s">Курс - {{movies.title}}</h1>
+                 <!-- breadcrumb Start-->
+                 <nav aria-label="breadcrumb">
+                   <ol class="breadcrumb">
+                     <li class="breadcrumb-item"><a href="index.html">Асосӣ</a></li>
+                     <li class="breadcrumb-item"><a href="#">Тафсилоти курс</a></li> 
+                  </ol>
+               </nav>
+               <!-- breadcrumb End -->
+            </div>
+         </div>
+      </div>
+   </div>          
+</div>
+</div>
+</section>
+<!--? Blog Area Start -->
+<section class="blog_area single-post-area section-padding">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-8 posts-list">
+            <div class="single-post">
+               <div class="feature-img">
+                  <img class="img-fluid" src="{{ movies.movie_logo.url }}" alt="">
+               </div>
+               <div class="blog_details">
+                  <h2 style="color: #2d2d2d;">{{movies.title}}
+                  </h2>
+                  <ul class="blog-info-link mt-3 mb-4">
+                     <li><a href="#"><i class="fa fa-user"></i> {{movies.genre}}</a></li>
+                     <!--<li><a href="#"><i class="fa fa-comments"></i> {{movies.description}}</a></li>-->
+                  </ul>
+                  <iframe 
+                  width="560" 
+                  height="315" 
+                  src="https://www.youtube.com/embed/{{movies.video_url}}" 
+                  title="YouTube video player" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  referrerpolicy="strict-origin-when-cross-origin" 
+                  allowfullscreen>
+              </iframe>
+              
+               
+                  <p class="excert">
+                     {{movies.description}}
+                  </p>
+               </div>
+            </div>
+            <div class="navigation-top">
+               <div class="d-sm-flex justify-content-between text-center">
+                  <p class="like-info"><span class="align-middle"><i class="fa fa-heart"></i></span> Lily and 4
+                  people like this</p>
+                  <div class="col-sm-4 text-center my-2 my-sm-0">
+                     <!-- <p class="comment-count"><span class="align-middle"><i class="fa fa-comment"></i></span> 06 Comments</p> -->
+                  </div>
+                  <ul class="social-icons">
+                     <li><a href="https://www.facebook.com/sai4ull"><i class="fab fa-facebook-f"></i></a></li>
+                     <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                     <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
+                     <li><a href="#"><i class="fab fa-behance"></i></a></li>
+                  </ul>
+               </div>
+               <div class="navigation-area">
+                  <div class="row">
+                     <div
+                     class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
+                     <div class="thumb">
+                        <a href="#">
+                           <img class="img-fluid" src="assets/img/post/preview.png" alt="">
+                        </a>
+                     </div>
+                     <div class="arrow">
+                        <a href="#">
+                           <span class="lnr text-white ti-arrow-left"></span>
+                        </a>
+                     </div>
+                     <div class="detials">
+                        <p>Prev Post</p>
+                        <a href="#">
+                           <h4 style="color: #2d2d2d;">Space The Final Frontier</h4>
+                        </a>
+                     </div>
+                  </div>
+                  <div
+                  class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
+                  <div class="detials">
+                     <p>Next Post</p>
+                     <a href="#">
+                        <h4 style="color: #2d2d2d;">Telescopes 101</h4>
+                     </a>
+                  </div>
+                  <div class="arrow">
+                     <a href="#">
+                        <span class="lnr text-white ti-arrow-right"></span>
+                     </a>
+                  </div>
+                  <div class="thumb">
+                     <a href="#">
+                        <img class="img-fluid" src="assets/img/post/next.png" alt="">
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   
+   
+   </div>
+   <div class="col-lg-4">
+      <div class="blog_right_sidebar">
+         <aside class="single_sidebar_widget search_widget">
+            
+               <form class="form-horizontal" role="search" method="post" action="{% url 'detail' movies.id %}" onsubmit="return validateForm()"  name="ratingForm">
+                   
+                       
+                           
+                                   <div class="star-rating">
+                                       <h3>Курсро баҳо диҳед</h3>
+                                       <span class="fa fa-star-o" data-rating="1"></span>
+                                       <span class="fa fa-star-o" data-rating="2"></span>
+                                       <span class="fa fa-star-o" data-rating="3"></span>
+                                       <span class="fa fa-star-o" data-rating="4"></span>
+                                       <span class="fa fa-star-o" data-rating="5"></span>
+                                       
+                                       {% if rate_flag %}
+                                           <input type="hidden" name="rating" class="rating-value" value="{{movie_rating}}" >
+                                       {% else %}
+                                           <input type="hidden" name="rating" class="rating-value" value="0">
+                                       {% endif %}
+                                       {% csrf_token %}
+                                   </div>
+                               
+                           <button type="submit" class="btn">Равон кардан</button>
+                       
+                   
+               </form>
+
+               <form class="form-horizontal" role="search" method="post" action="{% url 'detail' movies.id %}">
+                   {% csrf_token %}
+                   
+                                   <div class="star-rating">
+                                       <h3>Ба рӯйхати ман илова кардан  </h3>
+                                       {% if update %}
+                                       <input type="checkbox" class="checkbox" name="watch" checked>
+                                       <button type="submit" class="btn" name="watch">Хориҷ кардан</button>
+                                       {% else %}
+                                       <input type="checkbox" class="checkbox" name="watch">
+                                       <button type="submit" class="btn">Илова кардан</button>
+                                       {% endif %}
+                                   </div>
+                           
+               </form>
+
+         </aside>
+      
+         
+      </div>
+   </div>
+</div>
+</div>
+</section>
+<!-- Blog Area End -->
+</main>
+<footer>
+   <div class="footer-wrappper footer-bg">
+    <!-- Footer Start-->
+    
+<!-- footer-bottom area -->
+<div class="footer-bottom-area">
+   <div class="container">
+       <div class="footer-border">
+           <div class="row d-flex align-items-center">
+               <div class="col-xl-12 ">
+                   <div class="footer-copy-right text-center">
+                       <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                         Copyright &copy;<script>document.write(new Date().getFullYear());</script> Ҳамаи ҳуқуқҳо маҳфуз аст | Ин лоиҳа аз ҷониби <a href="https://nekruzsadriddinzoda.vercel.app/" target="_blank">Nekruz Sadriddinzoda</a> таҳия шудааст <i class="fa fa-heart" aria-hidden="true"></i>
+                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+ <!-- Footer End-->
+</div>
+<!-- Footer End-->
+</div>
+</footer> 
+<!-- Scroll Up -->
+
+<div id="back-top" >
+   <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+</div>
+
+<!-- JS here -->
+
+<script src="{% static 'recommend/./assets/js/vendor/modernizr-3.5.0.min.js'%}"></script>
+<!-- Jquery, Popper, Bootstrap -->
+<script src="{% static 'recommend/./assets/js/vendor/jquery-1.12.4.min.js'%}"></script>
+<script src="{% static 'recommend/./assets/js/popper.min.js'%}"></script>
+<script src="{% static 'recommend/./assets/js/bootstrap.min.js'%}"></script>
+<!-- Jquery Mobile Menu -->
+<script src="{% static 'recommend/./assets/js/jquery.slicknav.min.js'%}"></script>
+
+<!-- Jquery Slick , Owl-Carousel Plugins -->
+<script src="{% static 'recommend/./assets/js/owl.carousel.min.js'%}"></script>
+<script src="{% static 'recommend/./assets/js/slick.min.js'%}"></script>
+<!-- One Page, Animated-HeadLin -->
+<script src="{% static 'recommend/./assets/js/wow.min.js'%}"></script>
+<script src="{% static 'recommend/./assets/js/animated.headline.js'%}"></script>
+<script src="{% static 'recommend/./assets/js/jquery.magnific-popup.js'%}"></script>
+
+<!-- Date Picker -->
+<script src="./assets/js/gijgo.min.js"></script>
+<!-- Nice-select, sticky -->
+<script src="{% static 'recommend/./assets/js/jquery.nice-select.min.js'%}"></script>
+<script src="{% static 'recommend/./assets/js/jquery.sticky.js'%}"></script>
+
+<!-- counter , waypoint,Hover Direction -->
+<script src="{% static 'recommend/./assets/js/jquery.counterup.min.js'%}"></script>
+<script src="{% static 'recommend/./assets/js/waypoints.min.js'%}"></script>
+<script src="{% static 'recommend/./assets/js/jquery.countdown.min.js'%}"></script>
+<script src="{% static 'recommend/./assets/js/hover-direction-snake.min.js'%}"></script>
+
+<!-- contact js -->
+<script src="{% static 'recommend/./assets/js/contact.js'%}"></script>
+<script src="{% static 'recommend/./assets/js/jquery.form.js'%}"></script>
+<script src="{% static 'recommend/./assets/js/jquery.validate.min.js'%}"></script>
+<script src="{% static 'recommend/./assets/js/mail-script.js'%}"></script>
+<script src="{% static 'recommend/./assets/js/jquery.ajaxchimp.min.js'%}"></script>
+
+<!-- Jquery Plugins, main Jquery -->	
+<script src="{% static 'recommend/./assets/js/plugins.js'%}"></script>
+<script src="{% static 'recommend/./assets/js/main.js'%}"></script>
+<script type="text/javascript" src="{%static 'recommend/js/jquery.min.js'%}">
+</script>
+
+<script type="text/javascript" src="{%static 'recommend/js/bootstrap.min.js'%}">
+</script>
+ <script type="text/javascript">
+ var $star_rating = $('.star-rating .fa');
+
+ var SetRatingStar = function() {
+     return $star_rating.each(function() {
+     if (parseInt($star_rating.siblings('input.rating-value').val()) >= parseInt($(this).data('rating'))) {
+         return $(this).removeClass('fa-star-o').addClass('fa-star');
+     } else {
+     return $(this).removeClass('fa-star').addClass('fa-star-o');
+     }
+     });
+     };
+
+ $star_rating.on('click', function() {
+ $star_rating.siblings('input.rating-value').val($(this).data('rating'));
+ return SetRatingStar();
+ });
+
+ SetRatingStar();
+ $(document).ready(function() {
+
+ });
+
+</script>
+<script type="text/javascript">
+ function validateForm(){
+ var x = document.forms["ratingForm"]["rating"].value;
+ if(x=="0"){
+     alert("Invalid Input");
+     return false;
+ }
+ }
+</script>
+
+</body>
+</html>

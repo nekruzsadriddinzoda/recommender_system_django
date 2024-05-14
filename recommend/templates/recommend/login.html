@@ -1,0 +1,121 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title> Воридшавӣ</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'recommend/assets/img/favicon.ico'%}">
+
+	<!-- CSS here -->
+	<link rel="stylesheet" href="{% static 'recommend/assets/css/bootstrap.min.css'%}">
+	<link rel="stylesheet" href="{% static 'recommend/assets/css/owl.carousel.min.css'%}">
+	<link rel="stylesheet" href="{% static 'recommend/assets/css/slicknav.css'%}">
+    <link rel="stylesheet" href="{% static 'recommend/assets/css/flaticon.css'%}">
+    <link rel="stylesheet" href="{% static 'recommend/assets/css/progressbar_barfiller.css'%}">
+    <link rel="stylesheet" href="{% static 'recommend/assets/css/gijgo.css'%}">
+    <link rel="stylesheet" href="{% static 'recommend/assets/css/animate.min.css'%}">
+    <link rel="stylesheet" href="{% static 'recommend/assets/css/animated-headline.css'%}">
+	<link rel="stylesheet" href="{% static 'recommend/assets/css/magnific-popup.css'%}">
+	<link rel="stylesheet" href="{% static 'recommend/assets/css/fontawesome-all.min.css'%}">
+	<link rel="stylesheet" href="{% static 'recommend/assets/css/themify-icons.css'%}">
+	<link rel="stylesheet" href="{% static 'recommend/assets/css/slick.css'%}">
+	<link rel="stylesheet" href="{% static 'recommend/assets/css/nice-select.css'%}">
+	<link rel="stylesheet" href="{% static 'recommend/assets/css/style.css'%}">
+</head>
+<body>
+    <!-- ? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="{% static 'recommend/assets/img/logo/loder.png'%}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start-->
+    {% block body %}
+    <main class="login-body"  data-vide-bg="{% static 'recommend/assets/img/login-bg.mp4'%}">
+        <!-- Login Admin -->
+        <form class="form-default" role="form" action="#" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="login-form">
+                <!-- logo-login -->
+                
+                <h2>Воридшавӣ</h2>
+                {% if error_message %}
+                        <p><strong>{{ error_message }}</strong></p>
+                    {% endif %}
+                <div class="form-input">
+                    <label for="name">Номи корбар:</label>
+                    <input  type="text" name="username" placeholder="" required>
+                </div>
+                <div class="form-input">
+                    <label for="name">Рамз</label>
+                    <input type="password" name="password" placeholder="" required>
+                </div>
+                <div class="form-input pt-30">
+                    <input type="submit" name="submit" value="Воридшавӣ">
+                </div>
+                
+                <!-- Forget Password -->
+                <a href="/" class="forget">Асосӣ</a>
+                <!-- Forget Password -->
+                <a href="{% url 'signup' %}" class="registration">Бақайдгирӣ</a>
+            </div>
+        </form>
+        <!-- /end login form -->
+    </main>
+
+    <script src="{% static 'recommend/./assets/js/vendor/modernizr-3.5.0.min.js'%}"></script>
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="{% static 'recommend/./assets/js/vendor/jquery-1.12.4.min.js'%}"></script>
+    <script src="{% static 'recommend/./assets/js/popper.min.js'%}"></script>
+    <script src="{% static 'recommend/./assets/js/bootstrap.min.js'%}"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="{% static 'recommend/./assets/js/jquery.slicknav.min.js'%}"></script>
+
+    <!-- Video bg -->
+    <script src="{% static 'recommend/./assets/js/jquery.vide.js'%}"></script>
+
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="{% static 'recommend/./assets/js/owl.carousel.min.js'%}"></script>
+    <script src="{% static 'recommend/./assets/js/slick.min.js'%}"></script>
+    <!-- One Page, Animated-HeadLin -->
+    <script src="{% static 'recommend/./assets/js/wow.min.js'%}"></script>
+    <script src="{% static 'recommend/./assets/js/animated.headline.js'%}"></script>
+    <script src="{% static 'recommend/./assets/js/jquery.magnific-popup.js'%}"></script>
+
+    <!-- Date Picker -->
+    <script src="{% static 'recommend/./assets/js/gijgo.min.js'%}"></script>
+    <!-- Nice-select, sticky -->
+    <script src="{% static 'recommend/./assets/js/jquery.nice-select.min.js'%}"></script>
+    <script src="{% static 'recommend/./assets/js/jquery.sticky.js'%}"></script>
+    <!-- Progress -->
+    <script src="{% static 'recommend/./assets/js/jquery.barfiller.js'%}"></script>
+    
+    <!-- counter , waypoint,Hover Direction -->
+    <script src="{% static 'recommend/./assets/js/jquery.counterup.min.js'%}"></script>
+    <script src="{% static 'recommend/./assets/js/waypoints.min.js'%}"></script>
+    <script src="{% static 'recommend/./assets/js/jquery.countdown.min.js'%}"></script>
+    <script src="{% static 'recommend/./assets/js/hover-direction-snake.min.js'%}"></script>
+
+    <!-- contact js -->
+    <script src="{% static 'recommend/./assets/js/contact.js'%}"></script>
+    <script src="{% static 'recommend/./assets/js/jquery.form.js'%}"></script>
+    <script src="{% static 'recommend/./assets/js/jquery.validate.min.js'%}"></script>
+    <script src="{% static 'recommend/./assets/js/mail-script.js'%}"></script>
+    <script src="{% static 'recommend/./assets/js/jquery.ajaxchimp.min.js'%}"></script>
+    
+    <!-- Jquery Plugins, main Jquery -->	
+    <script src="{% static 'recommend/./assets/js/plugins.js'%}"></script>
+    <script src="{% static 'recommend/./assets/js/main.js'%}"></script>
+    
+    </body>
+</html>
+{% endblock %}
